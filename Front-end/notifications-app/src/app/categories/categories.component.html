@@ -1,0 +1,10 @@
+<div>
+    <button *ngFor="let category of listOfCategories" mat-raised-button color="primary" (click)="selectCategory(category.id)">
+        Category {{category.name}}
+    </button>
+    <button mat-raised-button color="primary" (click)="resetFilter()">
+        Reset Category
+     </button>
+</div>
+
+<!-- <button mat-raised-button color="primary" (click)="selectCategory(null)">Reset</button> -->

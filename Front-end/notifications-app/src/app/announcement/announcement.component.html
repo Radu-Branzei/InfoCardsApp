@@ -1,0 +1,12 @@
+<!-- <p>Titlul: {{announcement.title}} si mesajul: {{announcement.message}} cu autorul: {{announcement.author}}
+     de tipul: {{announcement.category.name}} cu id-ul: {{announcement.category.id}}</p> -->
+
+     <div class="announcement-container">
+          <p class="message"> Message '{{announcement.message}}' </p>
+          <p class="id"> ID: {{announcement.id}} </p>
+          <p class="title">{{announcement.title}}</p>
+          <p class="author">{{announcement.author | author}} </p>
+
+          <button mat-raised-button color="primary" (click)="deleteAnnouncement()">Delete</button>
+          <button mat-raised-button color="primary" (click)="setEditId()" [routerLink]="'/edit'">Edit</button>
+      </div>

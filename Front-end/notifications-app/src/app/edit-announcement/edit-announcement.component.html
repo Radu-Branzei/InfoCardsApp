@@ -1,0 +1,33 @@
+<form>
+
+    <mat-form-field class="full-width">
+        <input matInput placeholder="Message" [(ngModel)]="messageEdited" name="message" required>
+        <textarea matInput placeholder=""></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <input matInput placeholder="title" [(ngModel)]="titleEdited" name="title" required>
+        <textarea matInput placeholder=""></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Category</mat-label>
+        <mat-select [(ngModel)]="categoryEdited" name="category">
+          <mat-option *ngFor="let category of listOfCategories" [value]="category.name  ">
+            {{category.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>author</mat-label>
+        <select matNativeControl required [(ngModel)]="authorEdited" name="author">
+          <option value="Ion Creanga">Ion Creanga</option>
+          <option value="Mihai Eminescu">Mihai Eminescu</option>
+          <option value="Ioan Slavici">Ioan Slavici</option>
+          <option value="Ion Luca Caragiale">Ion Luca Caragiale</option>
+        </select>
+      </mat-form-field>
+    <button mat-raised-button color="primary" [routerLink]="'/'">Cancel</button>
+    <button mat-raised-button color="primary" (click)="editAnnouncement()">Edit</button>
+</form>
